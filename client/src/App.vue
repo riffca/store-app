@@ -1,32 +1,82 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<router-view/>
+	</div>
 </template>
 
 <style lang="scss">
+$Greenery:#88B04B;
+$Serenity:#92A8D1;
+$RadiandOrchid: #B565A7;
+
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+	font-family: 'Montserrat', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+
+	margin-bottom: 9vw;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+* {
+	margin: 0;
 }
+
+.inline {
+	display: inline;
+}
+
+.button {
+	display: inline-block;
+	padding: 1vw 1.2vw;
+	border: 1px solid $Serenity;
+	cursor: pointer;
+}
+
+.card {
+	padding: 3vw 5vw;
+	border: 1px solid $Greenery;
+
+	&.selected {
+		background: $RadiandOrchid;
+		color: white;
+		.clickable {
+			border: 1px solid white;
+		}
+
+	} 
+}
+
+.center-items {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	> div {
+		margin: 0 2vw;
+	}
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.clickable {
+	user-select: none;
+	cursor: pointer;
+	display: inline-block;
+	padding: .4vw .5vw;
+	margin: .3vw .6vw;
+	border: 1px solid black;
+	
+	&:hover {
+		transform: scale(1.2);
+	};
+}
+
+
+
+
 </style>
